@@ -12,39 +12,6 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": 1555243903,
-        "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.Pages.Counter",
-        "AssemblyName": "Tangy_WebServer",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.Pages.Counter"
-        }
-      },
-      {
-        "HashCode": -2107072515,
-        "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.Pages.Counter",
-        "AssemblyName": "Tangy_WebServer",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tangy_WebServer.Pages.Counter"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.Pages.Counter",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 82705731,
         "Kind": "Components.Component",
         "Name": "Tangy_WebServer.Pages.FetchData",
@@ -111,88 +78,35 @@
         }
       },
       {
-        "HashCode": -1404223851,
+        "HashCode": 1555243903,
         "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.App",
+        "Name": "Tangy_WebServer.Pages.Counter",
         "AssemblyName": "Tangy_WebServer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Counter"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.App"
+          "Common.TypeName": "Tangy_WebServer.Pages.Counter"
         }
       },
       {
-        "HashCode": 905975225,
+        "HashCode": -2107072515,
         "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.App",
+        "Name": "Tangy_WebServer.Pages.Counter",
         "AssemblyName": "Tangy_WebServer",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Tangy_WebServer.App"
+            "TagName": "Tangy_WebServer.Pages.Counter"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.App",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1737848102,
-        "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.Shared.SurveyPrompt",
-        "AssemblyName": "Tangy_WebServer",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.Shared.SurveyPrompt"
-        }
-      },
-      {
-        "HashCode": -121078222,
-        "Kind": "Components.Component",
-        "Name": "Tangy_WebServer.Shared.SurveyPrompt",
-        "AssemblyName": "Tangy_WebServer",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tangy_WebServer.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tangy_WebServer.Shared.SurveyPrompt",
+          "Common.TypeName": "Tangy_WebServer.Pages.Counter",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -322,6 +236,92 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tangy_WebServer.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1737848102,
+        "Kind": "Components.Component",
+        "Name": "Tangy_WebServer.Shared.SurveyPrompt",
+        "AssemblyName": "Tangy_WebServer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tangy_WebServer.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -121078222,
+        "Kind": "Components.Component",
+        "Name": "Tangy_WebServer.Shared.SurveyPrompt",
+        "AssemblyName": "Tangy_WebServer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tangy_WebServer.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tangy_WebServer.Shared.SurveyPrompt",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1404223851,
+        "Kind": "Components.Component",
+        "Name": "Tangy_WebServer.App",
+        "AssemblyName": "Tangy_WebServer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tangy_WebServer.App"
+        }
+      },
+      {
+        "HashCode": 905975225,
+        "Kind": "Components.Component",
+        "Name": "Tangy_WebServer.App",
+        "AssemblyName": "Tangy_WebServer",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tangy_WebServer.App"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tangy_WebServer.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
