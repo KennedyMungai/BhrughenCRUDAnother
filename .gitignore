@@ -1,1 +1,9 @@
 /.vscode
+/Tangy_Business/obj/
+/Tangy_Business/bin/
+/Tangy_Common/obj/
+/Tangy_Common/bin/
+/Tangy_DataAccess/bin/
+/Tangy_DataAccess/obj/
+/Tangy_WebServer/bin/
+/Tangy_WebServer/obj/
