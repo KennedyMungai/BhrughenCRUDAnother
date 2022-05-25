@@ -1,33 +1,27 @@
 using Tangy_WebServer.Data;
+using AutoMapper;
 
 namespace Tangy_WebServer.Data.DTOs;
 
 public class CategoryRepository : ICategoryRepository
 {
     private readonly ApplicationDbContext _db;
+    private readonly IMapper _mapper;
 
-    public CategoryRepository(ApplicationDbContext db)
+    public CategoryRepository(ApplicationDbContext db, IMapper mapper)
     {
         _db = db;
+        _mapper = mapper;
     }
 
     public CategoryDTO Create(CategoryDTO objDTO)
     {
-        Category category = new Category()
-        {
-            Name = objDTO.Name,
-            Id = objDTO.Id,
-            CreatedDate = DateTime.Now
-        };
-
-        _db.Categories.Add(category);
+        var obj = _mapper.Map<CategoryDTO, Category>(objDTO);
+        
+        var addedObj = _db.Categories.Add(obj);
         _db.SaveChanges();
 
-        return new CategoryDTO()
-        {
-            Id=category.Id,
-            Name=category.Name
-        };
+        return _mapper.Map<Category, CategoryDTO>(addedObj.Entity);
     }
 
     public CategoryDTO Update(CategoryDTO objDTO)
