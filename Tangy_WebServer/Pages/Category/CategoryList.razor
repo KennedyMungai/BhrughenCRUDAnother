@@ -14,7 +14,7 @@
 </div>
 <div class="my-2 row">
     <div class="col-12">
-        @if(Categories.Any())
+        @if(Categories_.Any())
         {
             <table class="table table-bordered table-inverted table-responsive">
                 <thead>
@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var objCat in Categories)
+                    @foreach(var objCat in Categories_)
                     {
                         <tr>
                             <td>@objCat.Name</td>
@@ -35,7 +35,17 @@
                     }
                 </tbody>
             </table>
-            
+        }
+        else
+        {
+            if(IsLoading)
+            {
+                <!-- loading gif -->
+            }
+            else
+            {
+                <p class="lead text-danger">No records found!!</p>
+            }
         }
     </div>
 </div>
@@ -43,6 +53,8 @@
 
 @code {
     private IEnumerable<CategoryDTO> Categories_ {get; set;} = new List<CategoryDTO>();
+
+    public bool IsLoading {get; set;} = true;
 
     protected override async Task OnInitializedAsync()
     {
@@ -52,5 +64,6 @@
     private void LoadCategories()
     {
         Categories_ = __categoryRepository.GetAll();
+        IsLoading = false;
     }
 }
