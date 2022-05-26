@@ -1,35 +1,75 @@
 ﻿@page "/category/create"
-@inject ICategoryRepository _categoryRepository
+@page "/category/edit/{id:int}"
+@inject ICategoryRepository __categoryRepository
 @inject NavigationManager _navigationManager
 
 <div class="my-2 row">
     <h3 class="card-title mb-3 ml-3 text-primary">@Title Category</h3>
 
     <div class="col-8">
-        <EditForm Model="Category" OnValidSubmit="UpsertCategory">
-            <DataAnnotationsValidator />
-            <!-- <ValidationSummary /> -->
-            <div class="form-group">
-                <label for="Name" class="lead">Name</label>
-                <InputText @bind-Value="Category.Name" class="form-control"></InputText>
-                <ValidationMessage For="() => Category.Name"></ValidationMessage>
+        @if(IsLoading)
+        {
+            <div class="text-center">
+                <img src="images/loading.gif" alt="A loading gif">
             </div>
-            <div class="form-group mt-4 p-3">
-                <button class="btn btn-primary">@Title</button>
-                <Navlink href="CategoryList" class="btn btn-secondary">Back to Index</Navlink>
-            </div>
-        </EditForm>
+        }
+        else
+        {
+            <EditForm Model="Category" OnValidSubmit="UpsertCategory">
+                <DataAnnotationsValidator />
+                <!-- <ValidationSummary /> -->
+                <div class="form-group">
+                    <label for="Name" class="lead">Name</label>
+                    <InputText @bind-Value="Category.Name" class="form-control"></InputText>
+                    <ValidationMessage For="() => Category.Name"></ValidationMessage>
+                </div>
+                <div class="form-group mt-4 p-3">
+                    <button class="btn btn-primary">@Title</button>
+                    <Navlink class="btn btn-secondary" @onclick="BackToIndex">Back to Index</Navlink>
+                </div>
+            </EditForm>
+        }
     </div>
 </div>
 
 @code {
-    private CategoryDTO Category { get; set; } = new CategoryDTO();
+    [Parameter]
+    public int Id{get; set;}
 
+    private CategoryDTO Category { get; set; } = new CategoryDTO();
     private string Title {get; set;} = "Create";
+
+    public bool IsLoading {get; set;} = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if(Id == 0)
+        {
+            //Create
+            IsLoading=false;
+        }
+        else
+        {
+            //Update
+            await Task.Run(LoadCategory);
+            Title = "Edit";
+        }
+    }
+
+    private void LoadCategory()
+    {
+        Category= __categoryRepository.Get(Id);
+        IsLoading = false;
+    }
 
     private void UpsertCategory()
     {
-        _categoryRepository.Create(Category);
+        __categoryRepository.Create(Category);
+        _navigationManager.NavigateTo("CategoryList");
+    }
+
+    void BackToIndex()
+    {
         _navigationManager.NavigateTo("CategoryList");
     }
 }
