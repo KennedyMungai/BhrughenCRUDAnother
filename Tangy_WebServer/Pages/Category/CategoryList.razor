@@ -1,5 +1,5 @@
 ﻿@page "/CategoryList"
-@inject ICategoryRepository _categoryRepository
+@inject ICategoryRepository __categoryRepository
 
 <h3 class="display-6 text-center">CategoryList</h3>
 <hr>
@@ -42,10 +42,15 @@
 
 
 @code {
-    private IEnumerable<CategoryDTO> Categories {get; set;} = new List<CategoryDTO>();
+    private IEnumerable<CategoryDTO> Categories_ {get; set;} = new List<CategoryDTO>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Categories = _categoryRepository.GetAll();
+        await Task.Run(LoadCategories);
+    }
+
+    private void LoadCategories()
+    {
+        Categories_ = __categoryRepository.GetAll();
     }
 }
