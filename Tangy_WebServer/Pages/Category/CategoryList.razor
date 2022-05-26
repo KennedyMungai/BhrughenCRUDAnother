@@ -29,7 +29,7 @@
                         <tr>
                             <td>@objCat.Name</td>
                             <td>
-                                <NavLink href="" class="btn btn-primary">Edit</NavLink>
+                                <NavLink href="@($"category/edit/{objCat.Id}")" class="btn btn-primary">Edit</NavLink>
                             </td>
                         </tr>
                     }
@@ -41,6 +41,9 @@
             if(IsLoading)
             {
                 <!-- loading gif -->
+                <div class="text-center">
+                    <img src="images\loading.gif" alt="Loading gif">
+                </div>
             }
             else
             {
